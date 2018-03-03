@@ -126,7 +126,7 @@
                      return {
                          "parameter-value": true,
                          difference: app.difference[name] && app.difference[name][ver],
-                         unexist: app.parameters[ver][name] ? false : true,
+                         unexist: app.parameters[ver][name] == undefined,
                      }
                  },
                  val_class: function(name, ver) {
@@ -139,7 +139,7 @@
 
          axios.get('json/versions.json')
               .then(function(response){
-                  app.all_vers =response.data.versions
+                  app.all_vers = response.data.versions
               })
 
          function set_url() {
