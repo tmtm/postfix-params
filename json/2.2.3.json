@@ -1,1 +1,2547 @@
-{"config_directory":{"type":"STR","default":"/etc/postfix","min":1,"max":0},"connection_cache_ttl_limit":{"type":"TIME","default":"2s","min":1,"max":0},"connection_cache_status_update_time":{"type":"TIME","default":"600s","min":1,"max":0},"command_time_limit":{"type":"TIME","default":"1000s","min":1,"max":0},"duplicate_filter_limit":{"type":"INT","default":"1000","min":0,"max":0},"mailbox_size_limit":{"type":"INT","default":"(10240000*5)","min":0,"max":0},"alias_maps":{"type":"STR","default":["hash:/etc/mail/aliases, nis:mail.aliases","hash:/etc/aliases, nis:mail.aliases","dbm:/etc/aliases, nis:mail.aliases","dbm:/var/adm/sendmail/aliases, nis:mail.aliases","dbm:/etc/mail/aliases, nis:mail.aliases","dbm:/usr/lib/aliases, nis:mail.aliases","netinfo:/aliases, nis:mail.aliases","hash:/etc/mail/aliases","hash:/etc/aliases","dbm:/etc/aliases","dbm:/var/adm/sendmail/aliases","dbm:/etc/mail/aliases","dbm:/usr/lib/aliases","netinfo:/aliases"],"min":0,"max":0},"home_mailbox":{"type":"STR","default":"","min":0,"max":0},"allow_mail_to_commands":{"type":"STR","default":"alias, forward","min":0,"max":0},"allow_mail_to_files":{"type":"STR","default":"alias, forward","min":0,"max":0},"local_command_shell":{"type":"STR","default":"","min":0,"max":0},"mail_spool_directory":{"type":"STR","default":["/var/spool/mail","/var/mail","/usr/mail","/usr/spool/mail"],"min":0,"max":0},"mailbox_transport":{"type":"STR","default":"","min":0,"max":0},"fallback_transport":{"type":"STR","default":"","min":0,"max":0},"command_expansion_filter":{"type":"STR","default":"1234567890!@%-_=+:,./abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ","min":1,"max":0},"forward_expansion_filter":{"type":"STR","default":"1234567890!@%-_=+:,./abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ","min":1,"max":0},"execution_directory_expansion_filter":{"type":"STR","default":"1234567890!@%-_=+:,./abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ","min":1,"max":0},"propagate_unmatched_extensions":{"type":"STR","default":"canonical, virtual","min":0,"max":0},"prepend_delivered_header":{"type":"STR","default":"command, file, forward","min":0,"max":0},"mailbox_delivery_lock":{"type":"STR","default":["flock","flock, dotlock","fcntl, dotlock","dotlock","fcntl"],"min":1,"max":0},"biff":{"type":"BOOL","default":"1","min":null,"max":null},"expand_owner_alias":{"type":"BOOL","default":"0","min":null,"max":null},"require_home_directory":{"type":"BOOL","default":"0","min":null,"max":null},"sun_mailtool_compatibility":{"type":"BOOL","default":"0","min":null,"max":null},"command_execution_directory":{"type":"RAW","default":"","min":0,"max":0},"forward_path":{"type":"RAW","default":"$home/.forward${recipient_delimiter}${extension}, $home/.forward","min":0,"max":0},"mailbox_command":{"type":"RAW","default":"","min":0,"max":0},"mailbox_command_maps":{"type":"RAW","default":"","min":0,"max":0},"luser_relay":{"type":"RAW","default":"","min":0,"max":0},"myhostname":{"type":"STR_FN","default":null,"min":1,"max":0},"mydomain":{"type":"STR_FN","default":null,"min":1,"max":0},"mynetworks":{"type":"STR_FN","default":null,"min":0,"max":0},"notify_classes":{"type":"STR","default":"resource, software","min":0,"max":0},"fallback_relay":{"type":"STR","default":"","min":0,"max":0},"best_mx_transport":{"type":"STR","default":"","min":0,"max":0},"error_notice_recipient":{"type":"STR","default":"postmaster","min":1,"max":0},"smtp_sasl_password_maps":{"type":"STR","default":"","min":0,"max":0},"smtp_sasl_security_options":{"type":"STR","default":"noplaintext, noanonymous","min":0,"max":0},"smtp_sasl_tls_security_options":{"type":"STR","default":"$var_smtp_sasl_opts","min":0,"max":0},"smtp_sasl_mechanism_filter":{"type":"STR","default":"","min":0,"max":0},"smtp_bind_address":{"type":"STR","default":"","min":0,"max":0},"smtp_bind_address6":{"type":"STR","default":"","min":0,"max":0},"smtp_helo_name":{"type":"STR","default":"$myhostname","min":1,"max":0},"smtp_host_lookup":{"type":"STR","default":"dns","min":1,"max":0},"smtp_connection_cache_destinations":{"type":"STR","default":"","min":0,"max":0},"connection_cache_service":{"type":"STR","default":"scache","min":1,"max":0},"smtp_discard_ehlo_keywords":{"type":"STR","default":"","min":0,"max":0},"smtp_discard_ehlo_keyword_address_maps":{"type":"STR","default":"","min":0,"max":0},"smtp_tls_per_site":{"type":"STR","default":"","min":0,"max":0},"smtp_generic_maps":{"type":"STR","default":"","min":0,"max":0},"smtp_connect_timeout":{"type":"TIME","default":"30s","min":0,"max":0},"smtp_helo_timeout":{"type":"TIME","default":"300s","min":1,"max":0},"smtp_xforward_timeout":{"type":"TIME","default":"300s","min":1,"max":0},"smtp_mail_timeout":{"type":"TIME","default":"300s","min":1,"max":0},"smtp_rcpt_timeout":{"type":"TIME","default":"300s","min":1,"max":0},"smtp_data_init_timeout":{"type":"TIME","default":"120s","min":1,"max":0},"smtp_data_xfer_timeout":{"type":"TIME","default":"180s","min":1,"max":0},"smtp_data_done_timeout":{"type":"TIME","default":"600s","min":1,"max":0},"smtp_rset_timeout":{"type":"TIME","default":"20s","min":1,"max":0},"smtp_quit_timeout":{"type":"TIME","default":"300s","min":1,"max":0},"smtp_pix_workaround_threshold_time":{"type":"TIME","default":"500s","min":0,"max":0},"smtp_pix_workaround_delay_time":{"type":"TIME","default":"10s","min":1,"max":0},"smtp_connection_cache_time_limit":{"type":"TIME","default":"2s","min":1,"max":0},"smtp_starttls_timeout":{"type":"TIME","default":"300s","min":1,"max":0},"smtp_line_length_limit":{"type":"INT","default":"990","min":0,"max":0},"smtp_mx_address_limit":{"type":"INT","default":"0","min":0,"max":0},"smtp_mx_session_limit":{"type":"INT","default":"2","min":0,"max":0},"smtp_connection_cache_reuse_limit":{"type":"INT","default":"10","min":1,"max":0},"smtp_tls_scert_verifydepth":{"type":"INT","default":"5","min":0,"max":0},"smtp_skip_5xx_greeting":{"type":"BOOL","default":"1","min":null,"max":null},"ignore_mx_lookup_error":{"type":"BOOL","default":"0","min":null,"max":null},"smtp_skip_quit_response":{"type":"BOOL","default":"1","min":null,"max":null},"smtp_always_send_ehlo":{"type":"BOOL","default":["0","1"],"min":null,"max":null},"smtp_never_send_ehlo":{"type":"BOOL","default":"0","min":null,"max":null},"smtp_sasl_auth_enable":{"type":"BOOL","default":"0","min":null,"max":null},"smtp_randomize_addresses":{"type":"BOOL","default":"1","min":null,"max":null},"smtp_quote_rfc821_envelope":{"type":"BOOL","default":"1","min":null,"max":null},"smtp_defer_if_no_mx_address_found":{"type":"BOOL","default":"0","min":null,"max":null},"smtp_send_xforward_command":{"type":"BOOL","default":"0","min":null,"max":null},"smtp_connection_cache_on_demand":{"type":"BOOL","default":["0","1"],"min":null,"max":null},"smtp_use_tls":{"type":"BOOL","default":"0","min":null,"max":null},"smtp_enforce_tls":{"type":"BOOL","default":"0","min":null,"max":null},"smtp_tls_enforce_peername":{"type":"BOOL","default":"1","min":null,"max":null},"smtp_tls_note_starttls_offer":{"type":"BOOL","default":"0","min":null,"max":null},"bounce_size_limit":{"type":"INT","default":"50000","min":1,"max":0},"maximal_queue_lifetime":{"type":"TIME","default":"5d","min":0,"max":8640000},"delay_warning_time":{"type":"TIME","default":"0h","min":0,"max":0},"bounce_notice_recipient":{"type":"STR","default":"postmaster","min":1,"max":0},"2bounce_notice_recipient":{"type":"STR","default":"postmaster","min":1,"max":0},"delay_notice_recipient":{"type":"STR","default":"postmaster","min":1,"max":0},"authorized_submit_users":{"type":"STR","default":"static:anyone","min":0,"max":0},"anvil_rate_time_unit":{"type":"TIME","default":"60s","min":1,"max":0},"anvil_status_update_time":{"type":"TIME","default":"600s","min":1,"max":0},"transport_maps":{"type":"STR","default":"","min":0,"max":0},"local_transport":{"type":"STR","default":"local:$myhostname","min":1,"max":0},"virtual_transport":{"type":"STR","default":"virtual","min":1,"max":0},"relay_transport":{"type":"STR","default":"relay","min":1,"max":0},"default_transport":{"type":"STR","default":"smtp","min":1,"max":0},"virtual_alias_maps":{"type":"STR","default":"$virtual_maps","min":0,"max":0},"virtual_alias_domains":{"type":"STR","default":"$virtual_alias_maps","min":0,"max":0},"virtual_mailbox_maps":{"type":"STR","default":"","min":0,"max":0},"virtual_mailbox_domains":{"type":"STR","default":"$virtual_mailbox_maps","min":0,"max":0},"relocated_maps":{"type":"STR","default":"","min":0,"max":0},"empty_address_recipient":{"type":"STR","default":"MAILER-DAEMON","min":1,"max":0},"address_verify_transport_maps":{"type":"STR","default":"$transport_maps","min":0,"max":0},"address_verify_local_transport":{"type":"STR","default":"$local_transport","min":1,"max":0},"address_verify_virtual_transport":{"type":"STR","default":"$virtual_transport","min":1,"max":0},"address_verify_relay_transport":{"type":"STR","default":"$relay_transport","min":1,"max":0},"address_verify_default_transport":{"type":"STR","default":"$default_transport","min":1,"max":0},"address_verify_relayhost":{"type":"STR","default":"$relayhost","min":0,"max":0},"remote_header_rewrite_domain":{"type":"STR","default":"","min":0,"max":0},"swap_bangpath":{"type":"BOOL","default":"1","min":null,"max":null},"append_dot_mydomain":{"type":"BOOL","default":"1","min":null,"max":null},"append_at_myorigin":{"type":"BOOL","default":"1","min":null,"max":null},"allow_percent_hack":{"type":"BOOL","default":"1","min":null,"max":null},"resolve_dequoted_address":{"type":"BOOL","default":"1","min":null,"max":null},"show_user_unknown_table_name":{"type":"BOOL","default":"1","min":null,"max":null},"resolve_null_domain":{"type":"BOOL","default":"0","min":null,"max":null},"fast_flush_refresh_time":{"type":"TIME","default":"12h","min":1,"max":0},"fast_flush_purge_time":{"type":"TIME","default":"7d","min":1,"max":0},"smtpd_recipient_limit":{"type":"INT","default":"1000","min":1,"max":0},"smtpd_soft_error_limit":{"type":"INT","default":"10","min":1,"max":0},"smtpd_hard_error_limit":{"type":"INT","default":"20","min":1,"max":0},"queue_minfree":{"type":"INT","default":"0","min":0,"max":0},"unknown_client_reject_code":{"type":"INT","default":"450","min":0,"max":0},"invalid_hostname_reject_code":{"type":"INT","default":"501","min":0,"max":0},"unknown_hostname_reject_code":{"type":"INT","default":"450","min":0,"max":0},"unknown_address_reject_code":{"type":"INT","default":"450","min":0,"max":0},"relay_domains_reject_code":{"type":"INT","default":"554","min":0,"max":0},"maps_rbl_reject_code":{"type":"INT","default":"554","min":0,"max":0},"access_map_reject_code":{"type":"INT","default":"554","min":0,"max":0},"reject_code":{"type":"INT","default":"554","min":0,"max":0},"defer_code":{"type":"INT","default":"450","min":0,"max":0},"non_fqdn_reject_code":{"type":"INT","default":"504","min":0,"max":0},"smtpd_junk_command_limit":{"type":"INT","default":"100","min":1,"max":0},"smtpd_recipient_overshoot_limit":{"type":"INT","default":"1000","min":1,"max":0},"smtpd_history_flush_threshold":{"type":"INT","default":"100","min":1,"max":0},"unverified_sender_reject_code":{"type":"INT","default":"450","min":0,"max":0},"unverified_recipient_reject_code":{"type":"INT","default":"450","min":0,"max":0},"multi_recipient_bounce_reject_code":{"type":"INT","default":"550","min":0,"max":0},"unknown_local_recipient_reject_code":{"type":"INT","default":"550","min":0,"max":0},"unknown_virtual_alias_reject_code":{"type":"INT","default":"550","min":0,"max":0},"unknown_virtual_mailbox_reject_code":{"type":"INT","default":"550","min":0,"max":0},"unknown_relay_recipient_reject_code":{"type":"INT","default":"550","min":0,"max":0},"address_verify_poll_count":{"type":"INT","default":"3","min":1,"max":0},"smtpd_client_connection_rate_limit":{"type":"INT","default":"0","min":0,"max":0},"smtpd_client_connection_count_limit":{"type":"INT","default":"((100+1)/2)","min":0,"max":0},"smtpd_client_message_rate_limit":{"type":"INT","default":"0","min":0,"max":0},"smtpd_client_recipient_rate_limit":{"type":"INT","default":"0","min":0,"max":0},"smtpd_tls_ccert_verifydepth":{"type":"INT","default":"5","min":0,"max":0},"smtpd_timeout":{"type":"TIME","default":"300s","min":1,"max":0},"smtpd_error_sleep_time":{"type":"TIME","default":"1s","min":0,"max":0},"smtpd_proxy_timeout":{"type":"TIME","default":"100s","min":1,"max":0},"address_verify_poll_delay":{"type":"TIME","default":"3s","min":1,"max":0},"smtpd_policy_service_timeout":{"type":"TIME","default":"100s","min":1,"max":0},"smtpd_policy_service_max_idle":{"type":"TIME","default":"300s","min":1,"max":0},"smtpd_policy_service_max_ttl":{"type":"TIME","default":"1000s","min":1,"max":0},"smtpd_starttls_timeout":{"type":"TIME","default":"300s","min":1,"max":0},"smtpd_helo_required":{"type":"BOOL","default":"0","min":null,"max":null},"smtpd_delay_reject":{"type":"BOOL","default":"1","min":null,"max":null},"strict_rfc821_envelopes":{"type":"BOOL","default":"0","min":null,"max":null},"disable_vrfy_command":{"type":"BOOL","default":"0","min":null,"max":null},"allow_untrusted_routing":{"type":"BOOL","default":"0","min":null,"max":null},"smtpd_sasl_auth_enable":{"type":"BOOL","default":"0","min":null,"max":null},"broken_sasl_auth_clients":{"type":"BOOL","default":"0","min":null,"max":null},"smtpd_reject_unlisted_sender":{"type":"BOOL","default":"0","min":null,"max":null},"smtpd_reject_unlisted_recipient":{"type":"BOOL","default":"1","min":null,"max":null},"smtpd_use_tls":{"type":"BOOL","default":"0","min":null,"max":null},"smtpd_enforce_tls":{"type":"BOOL","default":"0","min":null,"max":null},"smtpd_tls_wrappermode":{"type":"BOOL","default":"0","min":null,"max":null},"smtpd_tls_auth_only":{"type":"BOOL","default":"0","min":null,"max":null},"smtpd_tls_ask_ccert":{"type":"BOOL","default":"0","min":null,"max":null},"smtpd_tls_req_ccert":{"type":"BOOL","default":"0","min":null,"max":null},"smtpd_tls_received_header":{"type":"BOOL","default":"0","min":null,"max":null},"smtpd_banner":{"type":"STR","default":"$myhostname ESMTP $mail_name","min":1,"max":0},"smtpd_client_restrictions":{"type":"STR","default":"","min":0,"max":0},"smtpd_helo_restrictions":{"type":"STR","default":"","min":0,"max":0},"smtpd_sender_restrictions":{"type":"STR","default":"","min":0,"max":0},"smtpd_recipient_restrictions":{"type":"STR","default":"permit_mynetworks, reject_unauth_destination","min":0,"max":0},"smtpd_etrn_restrictions":{"type":"STR","default":"","min":0,"max":0},"smtpd_data_restrictions":{"type":"STR","default":"","min":0,"max":0},"smtpd_end_of_data_restrictions":{"type":"STR","default":"","min":0,"max":0},"maps_rbl_domains":{"type":"STR","default":"","min":0,"max":0},"rbl_reply_maps":{"type":"STR","default":"","min":0,"max":0},"smtpd_restriction_classes":{"type":"STR","default":"","min":0,"max":0},"canonical_maps":{"type":"STR","default":"","min":0,"max":0},"recipient_canonical_maps":{"type":"STR","default":"","min":0,"max":0},"local_recipient_maps":{"type":"STR","default":"proxy:unix:passwd.byname $alias_maps","min":0,"max":0},"smtpd_sasl_security_options":{"type":"STR","default":"noanonymous","min":0,"max":0},"smtpd_sasl_application_name":{"type":"STR","default":"smtpd","min":1,"max":0},"smtpd_sasl_local_domain":{"type":"STR","default":"","min":0,"max":0},"smtpd_sasl_exceptions_networks":{"type":"STR","default":"","min":0,"max":0},"content_filter":{"type":"STR","default":"","min":0,"max":0},"permit_mx_backup_networks":{"type":"STR","default":"","min":0,"max":0},"smtpd_sender_login_maps":{"type":"STR","default":"","min":0,"max":0},"smtpd_noop_commands":{"type":"STR","default":"","min":0,"max":0},"smtpd_forbidden_commands":{"type":"STR","default":"CONNECT GET POST","min":0,"max":0},"smtpd_null_access_lookup_key":{"type":"STR","default":"<>","min":0,"max":0},"relay_recipient_maps":{"type":"STR","default":"","min":0,"max":0},"address_verify_sender":{"type":"STR","default":"postmaster","min":0,"max":0},"smtpd_authorized_verp_clients":{"type":"STR","default":"$authorized_verp_clients","min":0,"max":0},"smtpd_proxy_filter":{"type":"STR","default":"","min":0,"max":0},"smtpd_proxy_ehlo":{"type":"STR","default":"$myhostname","min":0,"max":0},"receive_override_options":{"type":"STR","default":"","min":0,"max":0},"smtpd_authorized_xclient_hosts":{"type":"STR","default":"","min":0,"max":0},"smtpd_authorized_xforward_hosts":{"type":"STR","default":"","min":0,"max":0},"smtpd_client_event_limit_exceptions":{"type":"STR","default":"${smtpd_client_connection_limit_exceptions:$mynetworks}","min":0,"max":0},"local_header_rewrite_clients":{"type":"STR","default":"permit_inet_interfaces","min":0,"max":0},"smtpd_discard_ehlo_keywords":{"type":"STR","default":"","min":0,"max":0},"smtpd_discard_ehlo_keyword_address_maps":{"type":"STR","default":"","min":0,"max":0},"relay_clientcerts":{"type":"STR","default":"","min":0,"max":0},"smtpd_sasl_tls_security_options":{"type":"STR","default":"$smtpd_sasl_security_options","min":0,"max":0},"smtpd_expansion_filter":{"type":"RAW","default":"\\\\t\\\\40!\\#$%&'()*+,-./123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\\\\\\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\"","min":1,"max":0},"default_rbl_reply":{"type":"RAW","default":"$rbl_code Service unavailable; $rbl_class [$rbl_what] blocked using $rbl_domain${rbl_reason?; $rbl_reason}","min":1,"max":0},"qmqpd_timeout":{"type":"TIME","default":"300s","min":1,"max":0},"qmqpd_error_delay":{"type":"TIME","default":"1s","min":0,"max":0},"qmqpd_authorized_clients":{"type":"STR","default":"","min":0,"max":0},"lmtp_sasl_password_maps":{"type":"STR","default":"","min":0,"max":0},"lmtp_sasl_security_options":{"type":"STR","default":"noplaintext, noanonymous","min":0,"max":0},"lmtp_tcp_port":{"type":"INT","default":"24","min":0,"max":0},"lmtp_connect_timeout":{"type":"TIME","default":"0s","min":0,"max":0},"lmtp_rset_timeout":{"type":"TIME","default":"20s","min":1,"max":0},"lmtp_lhlo_timeout":{"type":"TIME","default":"300s","min":1,"max":0},"lmtp_xforward_timeout":{"type":"TIME","default":"300s","min":1,"max":0},"lmtp_mail_timeout":{"type":"TIME","default":"300s","min":1,"max":0},"lmtp_rcpt_timeout":{"type":"TIME","default":"300s","min":1,"max":0},"lmtp_data_init_timeout":{"type":"TIME","default":"120s","min":1,"max":0},"lmtp_data_xfer_timeout":{"type":"TIME","default":"180s","min":1,"max":0},"lmtp_data_done_timeout":{"type":"TIME","default":"600s","min":1,"max":0},"lmtp_quit_timeout":{"type":"TIME","default":"300s","min":1,"max":0},"lmtp_cache_connection":{"type":"BOOL","default":"1","min":null,"max":null},"lmtp_skip_quit_response":{"type":"BOOL","default":"0","min":null,"max":null},"lmtp_sasl_auth_enable":{"type":"BOOL","default":"0","min":null,"max":null},"lmtp_send_xforward_command":{"type":"BOOL","default":"0","min":null,"max":null},"sendmail_path":{"type":"STR","default":["/usr/sbin/sendmail","/usr/lib/sendmail","/usr/bin/sendmail"],"min":1,"max":0},"mailq_path":{"type":"STR","default":["/usr/bin/mailq","/usr/ucb/mailq","/usr/sbin/mailq"],"min":1,"max":0},"newaliases_path":{"type":"STR","default":["/usr/bin/newaliases","/usr/ucb/newaliases","/usr/sbin/newaliases"],"min":1,"max":0},"manpage_directory":{"type":"STR","default":"/usr/local/man","min":1,"max":0},"sample_directory":{"type":"STR","default":"/etc/postfix","min":1,"max":0},"readme_directory":{"type":"STR","default":"no","min":1,"max":0},"html_directory":{"type":"STR","default":"no","min":1,"max":0},"tls_random_source":{"type":"STR","default":["dev:/dev/urandom",""],"min":0,"max":0},"tls_random_reseed_period":{"type":"TIME","default":"3600s","min":1,"max":0},"tls_random_prng_update_period":{"type":"TIME","default":"3600s","min":1,"max":0},"tls_random_bytes":{"type":"INT","default":"32","min":1,"max":0},"inet_protocols":{"type":"STR","default":"ipv4","min":1,"max":0},"default_process_limit":{"type":"INT","default":"100","min":1,"max":0},"service_throttle_time":{"type":"TIME","default":"60s","min":1,"max":0},"defer_transports":{"type":"STR","default":"","min":0,"max":0},"queue_run_delay":{"type":"TIME","default":"1000s","min":1,"max":0},"minimal_backoff_time":{"type":"TIME","default":"1000s","min":1,"max":0},"maximal_backoff_time":{"type":"TIME","default":"4000s","min":1,"max":0},"bounce_queue_lifetime":{"type":"TIME","default":"5d","min":0,"max":8640000},"transport_retry_time":{"type":"TIME","default":"60s","min":1,"max":0},"qmgr_clog_warn_time":{"type":"TIME","default":"300s","min":0,"max":0},"qmgr_message_active_limit":{"type":"INT","default":"20000","min":1,"max":0},"qmgr_message_recipient_limit":{"type":"INT","default":"20000","min":1,"max":0},"initial_destination_concurrency":{"type":"INT","default":"5","min":1,"max":0},"default_destination_concurrency_limit":{"type":"INT","default":"20","min":0,"max":0},"default_destination_recipient_limit":{"type":"INT","default":"50","min":0,"max":0},"qmgr_fudge_factor":{"type":"INT","default":"100","min":10,"max":100},"local_destination_recipient_limit":{"type":"INT","default":"1","min":0,"max":0},"local_destination_concurrency_limit":{"type":"INT","default":"2","min":0,"max":0},"allow_min_user":{"type":"BOOL","default":"0","min":null,"max":null},"disable_verp_bounces":{"type":"BOOL","default":"0","min":null,"max":null},"sender_based_routing":{"type":"BOOL","default":"0","min":null,"max":null},"hopcount_limit":{"type":"INT","default":"50","min":1,"max":0},"queue_file_attribute_count_limit":{"type":"INT","default":"100","min":1,"max":0},"virtual_alias_recursion_limit":{"type":"INT","default":"1000","min":1,"max":0},"virtual_alias_expansion_limit":{"type":"INT","default":"1000","min":1,"max":0},"body_checks_size_limit":{"type":"INT","default":"(50*1024)","min":0,"max":0},"enable_original_recipient":{"type":"BOOL","default":"1","min":null,"max":null},"sender_canonical_maps":{"type":"STR","default":"","min":0,"max":0},"canonical_classes":{"type":"STR","default":"envelope_sender, envelope_recipient, header_sender, header_recipient","min":1,"max":0},"sender_canonical_classes":{"type":"STR","default":"envelope_sender, header_sender","min":1,"max":0},"recipient_canonical_classes":{"type":"STR","default":"envelope_recipient, header_recipient","min":1,"max":0},"masquerade_domains":{"type":"STR","default":"","min":0,"max":0},"masquerade_exceptions":{"type":"STR","default":"","min":0,"max":0},"header_checks":{"type":"STR","default":"","min":0,"max":0},"mime_header_checks":{"type":"STR","default":"$header_checks","min":0,"max":0},"nested_header_checks":{"type":"STR","default":"$header_checks","min":0,"max":0},"body_checks":{"type":"STR","default":"","min":0,"max":0},"always_bcc":{"type":"STR","default":"","min":0,"max":0},"undisclosed_recipients_header":{"type":"STR","default":"To: undisclosed-recipients:;","min":1,"max":0},"masquerade_classes":{"type":"STR","default":"envelope_sender, header_sender, header_recipient","min":0,"max":0},"sender_bcc_maps":{"type":"STR","default":"","min":0,"max":0},"recipient_bcc_maps":{"type":"STR","default":"","min":0,"max":0},"virtual_minimum_uid":{"type":"INT","default":"100","min":1,"max":0},"virtual_mailbox_limit":{"type":"INT","default":"(5*10240000)","min":0,"max":0},"virtual_uid_maps":{"type":"STR","default":"","min":0,"max":0},"virtual_gid_maps":{"type":"STR","default":"","min":0,"max":0},"virtual_mailbox_base":{"type":"STR","default":"","min":1,"max":0},"virtual_mailbox_lock":{"type":"STR","default":"fcntl","min":1,"max":0},"authorized_flush_users":{"type":"STR","default":"static:anyone","min":0,"max":0},"authorized_mailq_users":{"type":"STR","default":"static:anyone","min":0,"max":0},"qmgr_message_recipient_minimum":{"type":"INT","default":"10","min":1,"max":0},"default_recipient_limit":{"type":"INT","default":"10000","min":0,"max":0},"default_extra_recipient_limit":{"type":"INT","default":"1000","min":0,"max":0},"default_delivery_slot_cost":{"type":"INT","default":"5","min":0,"max":0},"default_delivery_slot_loan":{"type":"INT","default":"3","min":0,"max":0},"default_delivery_slot_discount":{"type":"INT","default":"50","min":0,"max":100},"default_minimum_delivery_slots":{"type":"INT","default":"3","min":0,"max":0},"address_verify_map":{"type":"STR","default":"","min":0,"max":0},"address_verify_positive_expire_time":{"type":"TIME","default":"31d","min":1,"max":0},"address_verify_positive_refresh_time":{"type":"TIME","default":"7d","min":1,"max":0},"address_verify_negative_expire_time":{"type":"TIME","default":"3d","min":1,"max":0},"address_verify_negative_refresh_time":{"type":"TIME","default":"3h","min":1,"max":0},"relay_domains":{"type":"STR","default":"$mydestination","min":0,"max":0},"proxy_read_maps":{"type":"STR","default":"$local_recipient_maps $mydestination $virtual_alias_maps $virtual_alias_domains $virtual_mailbox_maps $virtual_mailbox_domains $relay_recipient_maps $relay_domains $canonical_maps $sender_canonical_maps $recipient_canonical_maps $relocated_maps $transport_maps $mynetworks","min":0,"max":0},"syslog_facility":{"type":"STR","default":"mail","min":1,"max":0},"mail_name":{"type":"STR","default":"Postfix","min":1,"max":0},"syslog_name":{"type":"STR","default":"postfix","min":1,"max":0},"mail_owner":{"type":"STR","default":"postfix","min":1,"max":0},"setgid_group":{"type":"STR","default":"postdrop","min":1,"max":0},"mydestination":{"type":"STR","default":"$myhostname, localhost.$mydomain, localhost","min":0,"max":0},"myorigin":{"type":"STR","default":"$myhostname","min":1,"max":0},"relayhost":{"type":"STR","default":"","min":0,"max":0},"daemon_directory":{"type":"STR","default":"/usr/libexec/postfix","min":1,"max":0},"command_directory":{"type":"STR","default":["/usr/sbin","/usr/etc"],"min":1,"max":0},"queue_directory":{"type":"STR","default":"/var/spool/postfix","min":1,"max":0},"process_id_directory":{"type":"STR","default":"pid","min":1,"max":0},"inet_interfaces":{"type":"STR","default":"all","min":1,"max":0},"proxy_interfaces":{"type":"STR","default":"","min":0,"max":0},"double_bounce_sender":{"type":"STR","default":"double-bounce","min":1,"max":0},"default_privs":{"type":"STR","default":"nobody","min":1,"max":0},"alias_database":{"type":"STR","default":["hash:/etc/mail/aliases","hash:/etc/aliases","dbm:/etc/aliases","dbm:/var/adm/sendmail/aliases","dbm:/etc/mail/aliases","dbm:/usr/lib/aliases","netinfo:/aliases"],"min":0,"max":0},"mail_release_date":{"type":"STR","default":"20050428","min":1,"max":0},"mail_version":{"type":"STR","default":["2.2.3-20050428","2.2.3"],"min":1,"max":0},"default_database_type":{"type":"STR","default":["hash","dbm"],"min":1,"max":0},"hash_queue_names":{"type":"STR","default":"deferred, defer","min":1,"max":0},"recipient_delimiter":{"type":"STR","default":"","min":0,"max":1},"fast_flush_domains":{"type":"STR","default":"$relay_domains","min":0,"max":0},"export_environment":{"type":"STR","default":"TZ MAIL_CONFIG","min":0,"max":0},"import_environment":{"type":"STR","default":"MAIL_CONFIG MAIL_DEBUG MAIL_LOGTAG TZ XAUTHORITY DISPLAY","min":0,"max":0},"mynetworks_style":{"type":"STR","default":"subnet","min":1,"max":0},"debug_peer_list":{"type":"STR","default":"","min":0,"max":0},"default_verp_delimiters":{"type":"STR","default":"+=","min":2,"max":2},"verp_delimiter_filter":{"type":"STR","default":"-=+","min":1,"max":0},"parent_domain_matches_subdomains":{"type":"STR","default":"debug_peer_list,fast_flush_domains,mynetworks,permit_mx_backup_networks,qmqpd_authorized_clients,relay_domains,smtpd_access_maps","min":0,"max":0},"alternate_config_directories":{"type":"STR","default":"","min":0,"max":0},"bounce_service_name":{"type":"STR","default":"bounce","min":1,"max":0},"cleanup_service_name":{"type":"STR","default":"cleanup","min":1,"max":0},"defer_service_name":{"type":"STR","default":"defer","min":1,"max":0},"pickup_service_name":{"type":"STR","default":"pickup","min":1,"max":0},"queue_service_name":{"type":"STR","default":"qmgr","min":1,"max":0},"rewrite_service_name":{"type":"STR","default":"rewrite","min":1,"max":0},"showq_service_name":{"type":"STR","default":"showq","min":1,"max":0},"error_service_name":{"type":"STR","default":"error","min":1,"max":0},"flush_service_name":{"type":"STR","default":"flush","min":1,"max":0},"address_verify_service_name":{"type":"STR","default":"verify","min":1,"max":0},"trace_service_name":{"type":"STR","default":"trace","min":1,"max":0},"tls_random_exchange_name":{"type":"STR","default":"${config_directory}/prng_exch","min":0,"max":0},"smtpd_tls_cert_file":{"type":"STR","default":"","min":0,"max":0},"smtpd_tls_key_file":{"type":"STR","default":"$smtpd_tls_cert_file","min":0,"max":0},"smtpd_tls_dcert_file":{"type":"STR","default":"","min":0,"max":0},"smtpd_tls_dkey_file":{"type":"STR","default":"$smtpd_tls_dcert_file","min":0,"max":0},"smtpd_tls_CAfile":{"type":"STR","default":"","min":0,"max":0},"smtpd_tls_CApath":{"type":"STR","default":"","min":0,"max":0},"smtpd_tls_cipherlist":{"type":"STR","default":"","min":0,"max":0},"smtpd_tls_dh512_param_file":{"type":"STR","default":"","min":0,"max":0},"smtpd_tls_dh1024_param_file":{"type":"STR","default":"","min":0,"max":0},"smtpd_tls_session_cache_database":{"type":"STR","default":"","min":0,"max":0},"smtp_tls_cert_file":{"type":"STR","default":"","min":0,"max":0},"smtp_tls_key_file":{"type":"STR","default":"$smtp_tls_cert_file","min":0,"max":0},"smtp_tls_dcert_file":{"type":"STR","default":"","min":0,"max":0},"smtp_tls_dkey_file":{"type":"STR","default":"$smtp_tls_dcert_file","min":0,"max":0},"smtp_tls_CAfile":{"type":"STR","default":"","min":0,"max":0},"smtp_tls_CApath":{"type":"STR","default":"","min":0,"max":0},"smtp_tls_cipherlist":{"type":"STR","default":"","min":0,"max":0},"smtp_tls_session_cache_database":{"type":"STR","default":"","min":0,"max":0},"max_use":{"type":"INT","default":"100","min":1,"max":0},"dont_remove":{"type":"INT","default":"0","min":0,"max":0},"line_length_limit":{"type":"INT","default":"2048","min":512,"max":0},"message_size_limit":{"type":"INT","default":"10240000","min":0,"max":0},"hash_queue_depth":{"type":"INT","default":"1","min":1,"max":0},"fork_attempts":{"type":"INT","default":"5","min":1,"max":0},"deliver_lock_attempts":{"type":"INT","default":"20","min":1,"max":0},"debug_peer_level":{"type":"INT","default":"2","min":1,"max":0},"fault_injection_code":{"type":"INT","default":"0","min":0,"max":0},"berkeley_db_create_buffer_size":{"type":"INT","default":"(16*1024*1024)","min":1,"max":0},"berkeley_db_read_buffer_size":{"type":"INT","default":"(128*1024)","min":1,"max":0},"header_size_limit":{"type":"INT","default":"102400","min":1,"max":0},"header_address_token_limit":{"type":"INT","default":"10240","min":1,"max":0},"mime_nesting_limit":{"type":"INT","default":"100","min":1,"max":0},"mime_boundary_length_limit":{"type":"INT","default":"2048","min":1,"max":0},"smtpd_tls_loglevel":{"type":"INT","default":"0","min":0,"max":0},"smtp_tls_loglevel":{"type":"INT","default":"0","min":0,"max":0},"tls_daemon_random_bytes":{"type":"INT","default":"32","min":1,"max":0},"application_event_drain_time":{"type":"TIME","default":"100s","min":1,"max":0},"max_idle":{"type":"TIME","default":"100s","min":1,"max":0},"ipc_timeout":{"type":"TIME","default":"3600s","min":1,"max":0},"ipc_idle":{"type":"TIME","default":"100s","min":1,"max":0},"ipc_ttl":{"type":"TIME","default":"1000s","min":1,"max":0},"trigger_timeout":{"type":"TIME","default":"10s","min":1,"max":0},"fork_delay":{"type":"TIME","default":"1s","min":1,"max":0},"deliver_lock_delay":{"type":"TIME","default":"1s","min":1,"max":0},"stale_lock_time":{"type":"TIME","default":"500s","min":1,"max":0},"smtpd_tls_session_cache_timeout":{"type":"TIME","default":"3600s","min":0,"max":0},"smtp_tls_session_cache_timeout":{"type":"TIME","default":"3600s","min":0,"max":0},"daemon_timeout":{"type":"TIME","default":"18000s","min":1,"max":0},"in_flow_delay":{"type":"TIME","default":["0s","1s"],"min":0,"max":10},"disable_dns_lookups":{"type":"BOOL","default":"0","min":null,"max":null},"soft_bounce":{"type":"BOOL","default":"0","min":null,"max":null},"owner_request_special":{"type":"BOOL","default":"1","min":null,"max":null},"strict_8bitmime":{"type":"BOOL","default":"0","min":null,"max":null},"strict_7bit_headers":{"type":"BOOL","default":"0","min":null,"max":null},"strict_8bitmime_body":{"type":"BOOL","default":"0","min":null,"max":null},"strict_mime_encoding_domain":{"type":"BOOL","default":"0","min":null,"max":null},"disable_mime_input_processing":{"type":"BOOL","default":"0","min":null,"max":null},"disable_mime_output_conversion":{"type":"BOOL","default":"0","min":null,"max":null},"address_verify_negative_cache":{"type":"BOOL","default":"1","min":null,"max":null},"backwards_bounce_logfile_compatibility":{"type":"BOOL","default":"1","min":null,"max":null},"helpful_warnings":{"type":"BOOL","default":"1","min":null,"max":null}}
+{
+  "config_directory": {
+    "type": "STR",
+    "default": "/etc/postfix",
+    "min": 1,
+    "max": 0
+  },
+  "connection_cache_ttl_limit": {
+    "type": "TIME",
+    "default": "2s",
+    "min": 1,
+    "max": 0
+  },
+  "connection_cache_status_update_time": {
+    "type": "TIME",
+    "default": "600s",
+    "min": 1,
+    "max": 0
+  },
+  "command_time_limit": {
+    "type": "TIME",
+    "default": "1000s",
+    "min": 1,
+    "max": 0
+  },
+  "duplicate_filter_limit": {
+    "type": "INT",
+    "default": "1000",
+    "min": 0,
+    "max": 0
+  },
+  "mailbox_size_limit": {
+    "type": "INT",
+    "default": "(10240000*5)",
+    "min": 0,
+    "max": 0
+  },
+  "alias_maps": {
+    "type": "STR",
+    "default": [
+      "hash:/etc/mail/aliases, nis:mail.aliases",
+      "hash:/etc/aliases, nis:mail.aliases",
+      "dbm:/etc/aliases, nis:mail.aliases",
+      "dbm:/var/adm/sendmail/aliases, nis:mail.aliases",
+      "dbm:/etc/mail/aliases, nis:mail.aliases",
+      "dbm:/usr/lib/aliases, nis:mail.aliases",
+      "netinfo:/aliases, nis:mail.aliases",
+      "hash:/etc/mail/aliases",
+      "hash:/etc/aliases",
+      "dbm:/etc/aliases",
+      "dbm:/var/adm/sendmail/aliases",
+      "dbm:/etc/mail/aliases",
+      "dbm:/usr/lib/aliases",
+      "netinfo:/aliases"
+    ],
+    "min": 0,
+    "max": 0
+  },
+  "home_mailbox": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "allow_mail_to_commands": {
+    "type": "STR",
+    "default": "alias, forward",
+    "min": 0,
+    "max": 0
+  },
+  "allow_mail_to_files": {
+    "type": "STR",
+    "default": "alias, forward",
+    "min": 0,
+    "max": 0
+  },
+  "local_command_shell": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "mail_spool_directory": {
+    "type": "STR",
+    "default": [
+      "/var/spool/mail",
+      "/var/mail",
+      "/usr/mail",
+      "/usr/spool/mail"
+    ],
+    "min": 0,
+    "max": 0
+  },
+  "mailbox_transport": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "fallback_transport": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "command_expansion_filter": {
+    "type": "STR",
+    "default": "1234567890!@%-_=+:,./abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "min": 1,
+    "max": 0
+  },
+  "forward_expansion_filter": {
+    "type": "STR",
+    "default": "1234567890!@%-_=+:,./abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "min": 1,
+    "max": 0
+  },
+  "execution_directory_expansion_filter": {
+    "type": "STR",
+    "default": "1234567890!@%-_=+:,./abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "min": 1,
+    "max": 0
+  },
+  "propagate_unmatched_extensions": {
+    "type": "STR",
+    "default": "canonical, virtual",
+    "min": 0,
+    "max": 0
+  },
+  "prepend_delivered_header": {
+    "type": "STR",
+    "default": "command, file, forward",
+    "min": 0,
+    "max": 0
+  },
+  "mailbox_delivery_lock": {
+    "type": "STR",
+    "default": [
+      "flock",
+      "flock, dotlock",
+      "fcntl, dotlock",
+      "dotlock",
+      "fcntl"
+    ],
+    "min": 1,
+    "max": 0
+  },
+  "biff": {
+    "type": "BOOL",
+    "default": "1",
+    "min": null,
+    "max": null
+  },
+  "expand_owner_alias": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "require_home_directory": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "sun_mailtool_compatibility": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "command_execution_directory": {
+    "type": "RAW",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "forward_path": {
+    "type": "RAW",
+    "default": "$home/.forward${recipient_delimiter}${extension}, $home/.forward",
+    "min": 0,
+    "max": 0
+  },
+  "mailbox_command": {
+    "type": "RAW",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "mailbox_command_maps": {
+    "type": "RAW",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "luser_relay": {
+    "type": "RAW",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "myhostname": {
+    "type": "STR_FN",
+    "default": null,
+    "min": 1,
+    "max": 0
+  },
+  "mydomain": {
+    "type": "STR_FN",
+    "default": null,
+    "min": 1,
+    "max": 0
+  },
+  "mynetworks": {
+    "type": "STR_FN",
+    "default": null,
+    "min": 0,
+    "max": 0
+  },
+  "notify_classes": {
+    "type": "STR",
+    "default": "resource, software",
+    "min": 0,
+    "max": 0
+  },
+  "fallback_relay": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "best_mx_transport": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "error_notice_recipient": {
+    "type": "STR",
+    "default": "postmaster",
+    "min": 1,
+    "max": 0
+  },
+  "smtp_sasl_password_maps": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_sasl_security_options": {
+    "type": "STR",
+    "default": "noplaintext, noanonymous",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_sasl_tls_security_options": {
+    "type": "STR",
+    "default": "$var_smtp_sasl_opts",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_sasl_mechanism_filter": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_bind_address": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_bind_address6": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_helo_name": {
+    "type": "STR",
+    "default": "$myhostname",
+    "min": 1,
+    "max": 0
+  },
+  "smtp_host_lookup": {
+    "type": "STR",
+    "default": "dns",
+    "min": 1,
+    "max": 0
+  },
+  "smtp_connection_cache_destinations": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "connection_cache_service": {
+    "type": "STR",
+    "default": "scache",
+    "min": 1,
+    "max": 0
+  },
+  "smtp_discard_ehlo_keywords": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_discard_ehlo_keyword_address_maps": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_tls_per_site": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_generic_maps": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_connect_timeout": {
+    "type": "TIME",
+    "default": "30s",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_helo_timeout": {
+    "type": "TIME",
+    "default": "300s",
+    "min": 1,
+    "max": 0
+  },
+  "smtp_xforward_timeout": {
+    "type": "TIME",
+    "default": "300s",
+    "min": 1,
+    "max": 0
+  },
+  "smtp_mail_timeout": {
+    "type": "TIME",
+    "default": "300s",
+    "min": 1,
+    "max": 0
+  },
+  "smtp_rcpt_timeout": {
+    "type": "TIME",
+    "default": "300s",
+    "min": 1,
+    "max": 0
+  },
+  "smtp_data_init_timeout": {
+    "type": "TIME",
+    "default": "120s",
+    "min": 1,
+    "max": 0
+  },
+  "smtp_data_xfer_timeout": {
+    "type": "TIME",
+    "default": "180s",
+    "min": 1,
+    "max": 0
+  },
+  "smtp_data_done_timeout": {
+    "type": "TIME",
+    "default": "600s",
+    "min": 1,
+    "max": 0
+  },
+  "smtp_rset_timeout": {
+    "type": "TIME",
+    "default": "20s",
+    "min": 1,
+    "max": 0
+  },
+  "smtp_quit_timeout": {
+    "type": "TIME",
+    "default": "300s",
+    "min": 1,
+    "max": 0
+  },
+  "smtp_pix_workaround_threshold_time": {
+    "type": "TIME",
+    "default": "500s",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_pix_workaround_delay_time": {
+    "type": "TIME",
+    "default": "10s",
+    "min": 1,
+    "max": 0
+  },
+  "smtp_connection_cache_time_limit": {
+    "type": "TIME",
+    "default": "2s",
+    "min": 1,
+    "max": 0
+  },
+  "smtp_starttls_timeout": {
+    "type": "TIME",
+    "default": "300s",
+    "min": 1,
+    "max": 0
+  },
+  "smtp_line_length_limit": {
+    "type": "INT",
+    "default": "990",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_mx_address_limit": {
+    "type": "INT",
+    "default": "0",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_mx_session_limit": {
+    "type": "INT",
+    "default": "2",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_connection_cache_reuse_limit": {
+    "type": "INT",
+    "default": "10",
+    "min": 1,
+    "max": 0
+  },
+  "smtp_tls_scert_verifydepth": {
+    "type": "INT",
+    "default": "5",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_skip_5xx_greeting": {
+    "type": "BOOL",
+    "default": "1",
+    "min": null,
+    "max": null
+  },
+  "ignore_mx_lookup_error": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "smtp_skip_quit_response": {
+    "type": "BOOL",
+    "default": "1",
+    "min": null,
+    "max": null
+  },
+  "smtp_always_send_ehlo": {
+    "type": "BOOL",
+    "default": [
+      "0",
+      "1"
+    ],
+    "min": null,
+    "max": null
+  },
+  "smtp_never_send_ehlo": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "smtp_sasl_auth_enable": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "smtp_randomize_addresses": {
+    "type": "BOOL",
+    "default": "1",
+    "min": null,
+    "max": null
+  },
+  "smtp_quote_rfc821_envelope": {
+    "type": "BOOL",
+    "default": "1",
+    "min": null,
+    "max": null
+  },
+  "smtp_defer_if_no_mx_address_found": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "smtp_send_xforward_command": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "smtp_connection_cache_on_demand": {
+    "type": "BOOL",
+    "default": [
+      "0",
+      "1"
+    ],
+    "min": null,
+    "max": null
+  },
+  "smtp_use_tls": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "smtp_enforce_tls": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "smtp_tls_enforce_peername": {
+    "type": "BOOL",
+    "default": "1",
+    "min": null,
+    "max": null
+  },
+  "smtp_tls_note_starttls_offer": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "bounce_size_limit": {
+    "type": "INT",
+    "default": "50000",
+    "min": 1,
+    "max": 0
+  },
+  "maximal_queue_lifetime": {
+    "type": "TIME",
+    "default": "5d",
+    "min": 0,
+    "max": 8640000
+  },
+  "delay_warning_time": {
+    "type": "TIME",
+    "default": "0h",
+    "min": 0,
+    "max": 0
+  },
+  "bounce_notice_recipient": {
+    "type": "STR",
+    "default": "postmaster",
+    "min": 1,
+    "max": 0
+  },
+  "2bounce_notice_recipient": {
+    "type": "STR",
+    "default": "postmaster",
+    "min": 1,
+    "max": 0
+  },
+  "delay_notice_recipient": {
+    "type": "STR",
+    "default": "postmaster",
+    "min": 1,
+    "max": 0
+  },
+  "authorized_submit_users": {
+    "type": "STR",
+    "default": "static:anyone",
+    "min": 0,
+    "max": 0
+  },
+  "anvil_rate_time_unit": {
+    "type": "TIME",
+    "default": "60s",
+    "min": 1,
+    "max": 0
+  },
+  "anvil_status_update_time": {
+    "type": "TIME",
+    "default": "600s",
+    "min": 1,
+    "max": 0
+  },
+  "transport_maps": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "local_transport": {
+    "type": "STR",
+    "default": "local:$myhostname",
+    "min": 1,
+    "max": 0
+  },
+  "virtual_transport": {
+    "type": "STR",
+    "default": "virtual",
+    "min": 1,
+    "max": 0
+  },
+  "relay_transport": {
+    "type": "STR",
+    "default": "relay",
+    "min": 1,
+    "max": 0
+  },
+  "default_transport": {
+    "type": "STR",
+    "default": "smtp",
+    "min": 1,
+    "max": 0
+  },
+  "virtual_alias_maps": {
+    "type": "STR",
+    "default": "$virtual_maps",
+    "min": 0,
+    "max": 0
+  },
+  "virtual_alias_domains": {
+    "type": "STR",
+    "default": "$virtual_alias_maps",
+    "min": 0,
+    "max": 0
+  },
+  "virtual_mailbox_maps": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "virtual_mailbox_domains": {
+    "type": "STR",
+    "default": "$virtual_mailbox_maps",
+    "min": 0,
+    "max": 0
+  },
+  "relocated_maps": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "empty_address_recipient": {
+    "type": "STR",
+    "default": "MAILER-DAEMON",
+    "min": 1,
+    "max": 0
+  },
+  "address_verify_transport_maps": {
+    "type": "STR",
+    "default": "$transport_maps",
+    "min": 0,
+    "max": 0
+  },
+  "address_verify_local_transport": {
+    "type": "STR",
+    "default": "$local_transport",
+    "min": 1,
+    "max": 0
+  },
+  "address_verify_virtual_transport": {
+    "type": "STR",
+    "default": "$virtual_transport",
+    "min": 1,
+    "max": 0
+  },
+  "address_verify_relay_transport": {
+    "type": "STR",
+    "default": "$relay_transport",
+    "min": 1,
+    "max": 0
+  },
+  "address_verify_default_transport": {
+    "type": "STR",
+    "default": "$default_transport",
+    "min": 1,
+    "max": 0
+  },
+  "address_verify_relayhost": {
+    "type": "STR",
+    "default": "$relayhost",
+    "min": 0,
+    "max": 0
+  },
+  "remote_header_rewrite_domain": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "swap_bangpath": {
+    "type": "BOOL",
+    "default": "1",
+    "min": null,
+    "max": null
+  },
+  "append_dot_mydomain": {
+    "type": "BOOL",
+    "default": "1",
+    "min": null,
+    "max": null
+  },
+  "append_at_myorigin": {
+    "type": "BOOL",
+    "default": "1",
+    "min": null,
+    "max": null
+  },
+  "allow_percent_hack": {
+    "type": "BOOL",
+    "default": "1",
+    "min": null,
+    "max": null
+  },
+  "resolve_dequoted_address": {
+    "type": "BOOL",
+    "default": "1",
+    "min": null,
+    "max": null
+  },
+  "show_user_unknown_table_name": {
+    "type": "BOOL",
+    "default": "1",
+    "min": null,
+    "max": null
+  },
+  "resolve_null_domain": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "fast_flush_refresh_time": {
+    "type": "TIME",
+    "default": "12h",
+    "min": 1,
+    "max": 0
+  },
+  "fast_flush_purge_time": {
+    "type": "TIME",
+    "default": "7d",
+    "min": 1,
+    "max": 0
+  },
+  "smtpd_recipient_limit": {
+    "type": "INT",
+    "default": "1000",
+    "min": 1,
+    "max": 0
+  },
+  "smtpd_soft_error_limit": {
+    "type": "INT",
+    "default": "10",
+    "min": 1,
+    "max": 0
+  },
+  "smtpd_hard_error_limit": {
+    "type": "INT",
+    "default": "20",
+    "min": 1,
+    "max": 0
+  },
+  "queue_minfree": {
+    "type": "INT",
+    "default": "0",
+    "min": 0,
+    "max": 0
+  },
+  "unknown_client_reject_code": {
+    "type": "INT",
+    "default": "450",
+    "min": 0,
+    "max": 0
+  },
+  "invalid_hostname_reject_code": {
+    "type": "INT",
+    "default": "501",
+    "min": 0,
+    "max": 0
+  },
+  "unknown_hostname_reject_code": {
+    "type": "INT",
+    "default": "450",
+    "min": 0,
+    "max": 0
+  },
+  "unknown_address_reject_code": {
+    "type": "INT",
+    "default": "450",
+    "min": 0,
+    "max": 0
+  },
+  "relay_domains_reject_code": {
+    "type": "INT",
+    "default": "554",
+    "min": 0,
+    "max": 0
+  },
+  "maps_rbl_reject_code": {
+    "type": "INT",
+    "default": "554",
+    "min": 0,
+    "max": 0
+  },
+  "access_map_reject_code": {
+    "type": "INT",
+    "default": "554",
+    "min": 0,
+    "max": 0
+  },
+  "reject_code": {
+    "type": "INT",
+    "default": "554",
+    "min": 0,
+    "max": 0
+  },
+  "defer_code": {
+    "type": "INT",
+    "default": "450",
+    "min": 0,
+    "max": 0
+  },
+  "non_fqdn_reject_code": {
+    "type": "INT",
+    "default": "504",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_junk_command_limit": {
+    "type": "INT",
+    "default": "100",
+    "min": 1,
+    "max": 0
+  },
+  "smtpd_recipient_overshoot_limit": {
+    "type": "INT",
+    "default": "1000",
+    "min": 1,
+    "max": 0
+  },
+  "smtpd_history_flush_threshold": {
+    "type": "INT",
+    "default": "100",
+    "min": 1,
+    "max": 0
+  },
+  "unverified_sender_reject_code": {
+    "type": "INT",
+    "default": "450",
+    "min": 0,
+    "max": 0
+  },
+  "unverified_recipient_reject_code": {
+    "type": "INT",
+    "default": "450",
+    "min": 0,
+    "max": 0
+  },
+  "multi_recipient_bounce_reject_code": {
+    "type": "INT",
+    "default": "550",
+    "min": 0,
+    "max": 0
+  },
+  "unknown_local_recipient_reject_code": {
+    "type": "INT",
+    "default": "550",
+    "min": 0,
+    "max": 0
+  },
+  "unknown_virtual_alias_reject_code": {
+    "type": "INT",
+    "default": "550",
+    "min": 0,
+    "max": 0
+  },
+  "unknown_virtual_mailbox_reject_code": {
+    "type": "INT",
+    "default": "550",
+    "min": 0,
+    "max": 0
+  },
+  "unknown_relay_recipient_reject_code": {
+    "type": "INT",
+    "default": "550",
+    "min": 0,
+    "max": 0
+  },
+  "address_verify_poll_count": {
+    "type": "INT",
+    "default": "3",
+    "min": 1,
+    "max": 0
+  },
+  "smtpd_client_connection_rate_limit": {
+    "type": "INT",
+    "default": "0",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_client_connection_count_limit": {
+    "type": "INT",
+    "default": "((100+1)/2)",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_client_message_rate_limit": {
+    "type": "INT",
+    "default": "0",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_client_recipient_rate_limit": {
+    "type": "INT",
+    "default": "0",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_tls_ccert_verifydepth": {
+    "type": "INT",
+    "default": "5",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_timeout": {
+    "type": "TIME",
+    "default": "300s",
+    "min": 1,
+    "max": 0
+  },
+  "smtpd_error_sleep_time": {
+    "type": "TIME",
+    "default": "1s",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_proxy_timeout": {
+    "type": "TIME",
+    "default": "100s",
+    "min": 1,
+    "max": 0
+  },
+  "address_verify_poll_delay": {
+    "type": "TIME",
+    "default": "3s",
+    "min": 1,
+    "max": 0
+  },
+  "smtpd_policy_service_timeout": {
+    "type": "TIME",
+    "default": "100s",
+    "min": 1,
+    "max": 0
+  },
+  "smtpd_policy_service_max_idle": {
+    "type": "TIME",
+    "default": "300s",
+    "min": 1,
+    "max": 0
+  },
+  "smtpd_policy_service_max_ttl": {
+    "type": "TIME",
+    "default": "1000s",
+    "min": 1,
+    "max": 0
+  },
+  "smtpd_starttls_timeout": {
+    "type": "TIME",
+    "default": "300s",
+    "min": 1,
+    "max": 0
+  },
+  "smtpd_helo_required": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "smtpd_delay_reject": {
+    "type": "BOOL",
+    "default": "1",
+    "min": null,
+    "max": null
+  },
+  "strict_rfc821_envelopes": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "disable_vrfy_command": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "allow_untrusted_routing": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "smtpd_sasl_auth_enable": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "broken_sasl_auth_clients": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "smtpd_reject_unlisted_sender": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "smtpd_reject_unlisted_recipient": {
+    "type": "BOOL",
+    "default": "1",
+    "min": null,
+    "max": null
+  },
+  "smtpd_use_tls": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "smtpd_enforce_tls": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "smtpd_tls_wrappermode": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "smtpd_tls_auth_only": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "smtpd_tls_ask_ccert": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "smtpd_tls_req_ccert": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "smtpd_tls_received_header": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "smtpd_banner": {
+    "type": "STR",
+    "default": "$myhostname ESMTP $mail_name",
+    "min": 1,
+    "max": 0
+  },
+  "smtpd_client_restrictions": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_helo_restrictions": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_sender_restrictions": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_recipient_restrictions": {
+    "type": "STR",
+    "default": "permit_mynetworks, reject_unauth_destination",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_etrn_restrictions": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_data_restrictions": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_end_of_data_restrictions": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "maps_rbl_domains": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "rbl_reply_maps": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_restriction_classes": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "canonical_maps": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "recipient_canonical_maps": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "local_recipient_maps": {
+    "type": "STR",
+    "default": "proxy:unix:passwd.byname $alias_maps",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_sasl_security_options": {
+    "type": "STR",
+    "default": "noanonymous",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_sasl_application_name": {
+    "type": "STR",
+    "default": "smtpd",
+    "min": 1,
+    "max": 0
+  },
+  "smtpd_sasl_local_domain": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_sasl_exceptions_networks": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "content_filter": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "permit_mx_backup_networks": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_sender_login_maps": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_noop_commands": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_forbidden_commands": {
+    "type": "STR",
+    "default": "CONNECT GET POST",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_null_access_lookup_key": {
+    "type": "STR",
+    "default": "<>",
+    "min": 0,
+    "max": 0
+  },
+  "relay_recipient_maps": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "address_verify_sender": {
+    "type": "STR",
+    "default": "postmaster",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_authorized_verp_clients": {
+    "type": "STR",
+    "default": "$authorized_verp_clients",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_proxy_filter": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_proxy_ehlo": {
+    "type": "STR",
+    "default": "$myhostname",
+    "min": 0,
+    "max": 0
+  },
+  "receive_override_options": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_authorized_xclient_hosts": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_authorized_xforward_hosts": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_client_event_limit_exceptions": {
+    "type": "STR",
+    "default": "${smtpd_client_connection_limit_exceptions:$mynetworks}",
+    "min": 0,
+    "max": 0
+  },
+  "local_header_rewrite_clients": {
+    "type": "STR",
+    "default": "permit_inet_interfaces",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_discard_ehlo_keywords": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_discard_ehlo_keyword_address_maps": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "relay_clientcerts": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_sasl_tls_security_options": {
+    "type": "STR",
+    "default": "$smtpd_sasl_security_options",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_expansion_filter": {
+    "type": "RAW",
+    "default": "\\\\t\\\\40!\\#$%&'()*+,-./123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\\\\\\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\"",
+    "min": 1,
+    "max": 0
+  },
+  "default_rbl_reply": {
+    "type": "RAW",
+    "default": "$rbl_code Service unavailable; $rbl_class [$rbl_what] blocked using $rbl_domain${rbl_reason?; $rbl_reason}",
+    "min": 1,
+    "max": 0
+  },
+  "qmqpd_timeout": {
+    "type": "TIME",
+    "default": "300s",
+    "min": 1,
+    "max": 0
+  },
+  "qmqpd_error_delay": {
+    "type": "TIME",
+    "default": "1s",
+    "min": 0,
+    "max": 0
+  },
+  "qmqpd_authorized_clients": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "lmtp_sasl_password_maps": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "lmtp_sasl_security_options": {
+    "type": "STR",
+    "default": "noplaintext, noanonymous",
+    "min": 0,
+    "max": 0
+  },
+  "lmtp_tcp_port": {
+    "type": "INT",
+    "default": "24",
+    "min": 0,
+    "max": 0
+  },
+  "lmtp_connect_timeout": {
+    "type": "TIME",
+    "default": "0s",
+    "min": 0,
+    "max": 0
+  },
+  "lmtp_rset_timeout": {
+    "type": "TIME",
+    "default": "20s",
+    "min": 1,
+    "max": 0
+  },
+  "lmtp_lhlo_timeout": {
+    "type": "TIME",
+    "default": "300s",
+    "min": 1,
+    "max": 0
+  },
+  "lmtp_xforward_timeout": {
+    "type": "TIME",
+    "default": "300s",
+    "min": 1,
+    "max": 0
+  },
+  "lmtp_mail_timeout": {
+    "type": "TIME",
+    "default": "300s",
+    "min": 1,
+    "max": 0
+  },
+  "lmtp_rcpt_timeout": {
+    "type": "TIME",
+    "default": "300s",
+    "min": 1,
+    "max": 0
+  },
+  "lmtp_data_init_timeout": {
+    "type": "TIME",
+    "default": "120s",
+    "min": 1,
+    "max": 0
+  },
+  "lmtp_data_xfer_timeout": {
+    "type": "TIME",
+    "default": "180s",
+    "min": 1,
+    "max": 0
+  },
+  "lmtp_data_done_timeout": {
+    "type": "TIME",
+    "default": "600s",
+    "min": 1,
+    "max": 0
+  },
+  "lmtp_quit_timeout": {
+    "type": "TIME",
+    "default": "300s",
+    "min": 1,
+    "max": 0
+  },
+  "lmtp_cache_connection": {
+    "type": "BOOL",
+    "default": "1",
+    "min": null,
+    "max": null
+  },
+  "lmtp_skip_quit_response": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "lmtp_sasl_auth_enable": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "lmtp_send_xforward_command": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "sendmail_path": {
+    "type": "STR",
+    "default": [
+      "/usr/sbin/sendmail",
+      "/usr/lib/sendmail",
+      "/usr/bin/sendmail"
+    ],
+    "min": 1,
+    "max": 0
+  },
+  "mailq_path": {
+    "type": "STR",
+    "default": [
+      "/usr/bin/mailq",
+      "/usr/ucb/mailq",
+      "/usr/sbin/mailq"
+    ],
+    "min": 1,
+    "max": 0
+  },
+  "newaliases_path": {
+    "type": "STR",
+    "default": [
+      "/usr/bin/newaliases",
+      "/usr/ucb/newaliases",
+      "/usr/sbin/newaliases"
+    ],
+    "min": 1,
+    "max": 0
+  },
+  "manpage_directory": {
+    "type": "STR",
+    "default": "/usr/local/man",
+    "min": 1,
+    "max": 0
+  },
+  "sample_directory": {
+    "type": "STR",
+    "default": "/etc/postfix",
+    "min": 1,
+    "max": 0
+  },
+  "readme_directory": {
+    "type": "STR",
+    "default": "no",
+    "min": 1,
+    "max": 0
+  },
+  "html_directory": {
+    "type": "STR",
+    "default": "no",
+    "min": 1,
+    "max": 0
+  },
+  "tls_random_source": {
+    "type": "STR",
+    "default": [
+      "dev:/dev/urandom",
+      ""
+    ],
+    "min": 0,
+    "max": 0
+  },
+  "tls_random_reseed_period": {
+    "type": "TIME",
+    "default": "3600s",
+    "min": 1,
+    "max": 0
+  },
+  "tls_random_prng_update_period": {
+    "type": "TIME",
+    "default": "3600s",
+    "min": 1,
+    "max": 0
+  },
+  "tls_random_bytes": {
+    "type": "INT",
+    "default": "32",
+    "min": 1,
+    "max": 0
+  },
+  "inet_protocols": {
+    "type": "STR",
+    "default": "ipv4",
+    "min": 1,
+    "max": 0
+  },
+  "default_process_limit": {
+    "type": "INT",
+    "default": "100",
+    "min": 1,
+    "max": 0
+  },
+  "service_throttle_time": {
+    "type": "TIME",
+    "default": "60s",
+    "min": 1,
+    "max": 0
+  },
+  "defer_transports": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "queue_run_delay": {
+    "type": "TIME",
+    "default": "1000s",
+    "min": 1,
+    "max": 0
+  },
+  "minimal_backoff_time": {
+    "type": "TIME",
+    "default": "1000s",
+    "min": 1,
+    "max": 0
+  },
+  "maximal_backoff_time": {
+    "type": "TIME",
+    "default": "4000s",
+    "min": 1,
+    "max": 0
+  },
+  "bounce_queue_lifetime": {
+    "type": "TIME",
+    "default": "5d",
+    "min": 0,
+    "max": 8640000
+  },
+  "transport_retry_time": {
+    "type": "TIME",
+    "default": "60s",
+    "min": 1,
+    "max": 0
+  },
+  "qmgr_clog_warn_time": {
+    "type": "TIME",
+    "default": "300s",
+    "min": 0,
+    "max": 0
+  },
+  "qmgr_message_active_limit": {
+    "type": "INT",
+    "default": "20000",
+    "min": 1,
+    "max": 0
+  },
+  "qmgr_message_recipient_limit": {
+    "type": "INT",
+    "default": "20000",
+    "min": 1,
+    "max": 0
+  },
+  "initial_destination_concurrency": {
+    "type": "INT",
+    "default": "5",
+    "min": 1,
+    "max": 0
+  },
+  "default_destination_concurrency_limit": {
+    "type": "INT",
+    "default": "20",
+    "min": 0,
+    "max": 0
+  },
+  "default_destination_recipient_limit": {
+    "type": "INT",
+    "default": "50",
+    "min": 0,
+    "max": 0
+  },
+  "qmgr_fudge_factor": {
+    "type": "INT",
+    "default": "100",
+    "min": 10,
+    "max": 100
+  },
+  "local_destination_recipient_limit": {
+    "type": "INT",
+    "default": "1",
+    "min": 0,
+    "max": 0
+  },
+  "local_destination_concurrency_limit": {
+    "type": "INT",
+    "default": "2",
+    "min": 0,
+    "max": 0
+  },
+  "allow_min_user": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "disable_verp_bounces": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "sender_based_routing": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "hopcount_limit": {
+    "type": "INT",
+    "default": "50",
+    "min": 1,
+    "max": 0
+  },
+  "queue_file_attribute_count_limit": {
+    "type": "INT",
+    "default": "100",
+    "min": 1,
+    "max": 0
+  },
+  "virtual_alias_recursion_limit": {
+    "type": "INT",
+    "default": "1000",
+    "min": 1,
+    "max": 0
+  },
+  "virtual_alias_expansion_limit": {
+    "type": "INT",
+    "default": "1000",
+    "min": 1,
+    "max": 0
+  },
+  "body_checks_size_limit": {
+    "type": "INT",
+    "default": "(50*1024)",
+    "min": 0,
+    "max": 0
+  },
+  "enable_original_recipient": {
+    "type": "BOOL",
+    "default": "1",
+    "min": null,
+    "max": null
+  },
+  "sender_canonical_maps": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "canonical_classes": {
+    "type": "STR",
+    "default": "envelope_sender, envelope_recipient, header_sender, header_recipient",
+    "min": 1,
+    "max": 0
+  },
+  "sender_canonical_classes": {
+    "type": "STR",
+    "default": "envelope_sender, header_sender",
+    "min": 1,
+    "max": 0
+  },
+  "recipient_canonical_classes": {
+    "type": "STR",
+    "default": "envelope_recipient, header_recipient",
+    "min": 1,
+    "max": 0
+  },
+  "masquerade_domains": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "masquerade_exceptions": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "header_checks": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "mime_header_checks": {
+    "type": "STR",
+    "default": "$header_checks",
+    "min": 0,
+    "max": 0
+  },
+  "nested_header_checks": {
+    "type": "STR",
+    "default": "$header_checks",
+    "min": 0,
+    "max": 0
+  },
+  "body_checks": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "always_bcc": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "undisclosed_recipients_header": {
+    "type": "STR",
+    "default": "To: undisclosed-recipients:;",
+    "min": 1,
+    "max": 0
+  },
+  "masquerade_classes": {
+    "type": "STR",
+    "default": "envelope_sender, header_sender, header_recipient",
+    "min": 0,
+    "max": 0
+  },
+  "sender_bcc_maps": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "recipient_bcc_maps": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "virtual_minimum_uid": {
+    "type": "INT",
+    "default": "100",
+    "min": 1,
+    "max": 0
+  },
+  "virtual_mailbox_limit": {
+    "type": "INT",
+    "default": "(5*10240000)",
+    "min": 0,
+    "max": 0
+  },
+  "virtual_uid_maps": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "virtual_gid_maps": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "virtual_mailbox_base": {
+    "type": "STR",
+    "default": "",
+    "min": 1,
+    "max": 0
+  },
+  "virtual_mailbox_lock": {
+    "type": "STR",
+    "default": "fcntl",
+    "min": 1,
+    "max": 0
+  },
+  "authorized_flush_users": {
+    "type": "STR",
+    "default": "static:anyone",
+    "min": 0,
+    "max": 0
+  },
+  "authorized_mailq_users": {
+    "type": "STR",
+    "default": "static:anyone",
+    "min": 0,
+    "max": 0
+  },
+  "qmgr_message_recipient_minimum": {
+    "type": "INT",
+    "default": "10",
+    "min": 1,
+    "max": 0
+  },
+  "default_recipient_limit": {
+    "type": "INT",
+    "default": "10000",
+    "min": 0,
+    "max": 0
+  },
+  "default_extra_recipient_limit": {
+    "type": "INT",
+    "default": "1000",
+    "min": 0,
+    "max": 0
+  },
+  "default_delivery_slot_cost": {
+    "type": "INT",
+    "default": "5",
+    "min": 0,
+    "max": 0
+  },
+  "default_delivery_slot_loan": {
+    "type": "INT",
+    "default": "3",
+    "min": 0,
+    "max": 0
+  },
+  "default_delivery_slot_discount": {
+    "type": "INT",
+    "default": "50",
+    "min": 0,
+    "max": 100
+  },
+  "default_minimum_delivery_slots": {
+    "type": "INT",
+    "default": "3",
+    "min": 0,
+    "max": 0
+  },
+  "address_verify_map": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "address_verify_positive_expire_time": {
+    "type": "TIME",
+    "default": "31d",
+    "min": 1,
+    "max": 0
+  },
+  "address_verify_positive_refresh_time": {
+    "type": "TIME",
+    "default": "7d",
+    "min": 1,
+    "max": 0
+  },
+  "address_verify_negative_expire_time": {
+    "type": "TIME",
+    "default": "3d",
+    "min": 1,
+    "max": 0
+  },
+  "address_verify_negative_refresh_time": {
+    "type": "TIME",
+    "default": "3h",
+    "min": 1,
+    "max": 0
+  },
+  "relay_domains": {
+    "type": "STR",
+    "default": "$mydestination",
+    "min": 0,
+    "max": 0
+  },
+  "proxy_read_maps": {
+    "type": "STR",
+    "default": "$local_recipient_maps $mydestination $virtual_alias_maps $virtual_alias_domains $virtual_mailbox_maps $virtual_mailbox_domains $relay_recipient_maps $relay_domains $canonical_maps $sender_canonical_maps $recipient_canonical_maps $relocated_maps $transport_maps $mynetworks",
+    "min": 0,
+    "max": 0
+  },
+  "syslog_facility": {
+    "type": "STR",
+    "default": "mail",
+    "min": 1,
+    "max": 0
+  },
+  "mail_name": {
+    "type": "STR",
+    "default": "Postfix",
+    "min": 1,
+    "max": 0
+  },
+  "syslog_name": {
+    "type": "STR",
+    "default": "postfix",
+    "min": 1,
+    "max": 0
+  },
+  "mail_owner": {
+    "type": "STR",
+    "default": "postfix",
+    "min": 1,
+    "max": 0
+  },
+  "setgid_group": {
+    "type": "STR",
+    "default": "postdrop",
+    "min": 1,
+    "max": 0
+  },
+  "mydestination": {
+    "type": "STR",
+    "default": "$myhostname, localhost.$mydomain, localhost",
+    "min": 0,
+    "max": 0
+  },
+  "myorigin": {
+    "type": "STR",
+    "default": "$myhostname",
+    "min": 1,
+    "max": 0
+  },
+  "relayhost": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "daemon_directory": {
+    "type": "STR",
+    "default": "/usr/libexec/postfix",
+    "min": 1,
+    "max": 0
+  },
+  "command_directory": {
+    "type": "STR",
+    "default": [
+      "/usr/sbin",
+      "/usr/etc"
+    ],
+    "min": 1,
+    "max": 0
+  },
+  "queue_directory": {
+    "type": "STR",
+    "default": "/var/spool/postfix",
+    "min": 1,
+    "max": 0
+  },
+  "process_id_directory": {
+    "type": "STR",
+    "default": "pid",
+    "min": 1,
+    "max": 0
+  },
+  "inet_interfaces": {
+    "type": "STR",
+    "default": "all",
+    "min": 1,
+    "max": 0
+  },
+  "proxy_interfaces": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "double_bounce_sender": {
+    "type": "STR",
+    "default": "double-bounce",
+    "min": 1,
+    "max": 0
+  },
+  "default_privs": {
+    "type": "STR",
+    "default": "nobody",
+    "min": 1,
+    "max": 0
+  },
+  "alias_database": {
+    "type": "STR",
+    "default": [
+      "hash:/etc/mail/aliases",
+      "hash:/etc/aliases",
+      "dbm:/etc/aliases",
+      "dbm:/var/adm/sendmail/aliases",
+      "dbm:/etc/mail/aliases",
+      "dbm:/usr/lib/aliases",
+      "netinfo:/aliases"
+    ],
+    "min": 0,
+    "max": 0
+  },
+  "mail_release_date": {
+    "type": "STR",
+    "default": "20050428",
+    "min": 1,
+    "max": 0
+  },
+  "mail_version": {
+    "type": "STR",
+    "default": [
+      "2.2.3-20050428",
+      "2.2.3"
+    ],
+    "min": 1,
+    "max": 0
+  },
+  "default_database_type": {
+    "type": "STR",
+    "default": [
+      "hash",
+      "dbm"
+    ],
+    "min": 1,
+    "max": 0
+  },
+  "hash_queue_names": {
+    "type": "STR",
+    "default": "deferred, defer",
+    "min": 1,
+    "max": 0
+  },
+  "recipient_delimiter": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 1
+  },
+  "fast_flush_domains": {
+    "type": "STR",
+    "default": "$relay_domains",
+    "min": 0,
+    "max": 0
+  },
+  "export_environment": {
+    "type": "STR",
+    "default": "TZ MAIL_CONFIG",
+    "min": 0,
+    "max": 0
+  },
+  "import_environment": {
+    "type": "STR",
+    "default": "MAIL_CONFIG MAIL_DEBUG MAIL_LOGTAG TZ XAUTHORITY DISPLAY",
+    "min": 0,
+    "max": 0
+  },
+  "mynetworks_style": {
+    "type": "STR",
+    "default": "subnet",
+    "min": 1,
+    "max": 0
+  },
+  "debug_peer_list": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "default_verp_delimiters": {
+    "type": "STR",
+    "default": "+=",
+    "min": 2,
+    "max": 2
+  },
+  "verp_delimiter_filter": {
+    "type": "STR",
+    "default": "-=+",
+    "min": 1,
+    "max": 0
+  },
+  "parent_domain_matches_subdomains": {
+    "type": "STR",
+    "default": "debug_peer_list,fast_flush_domains,mynetworks,permit_mx_backup_networks,qmqpd_authorized_clients,relay_domains,smtpd_access_maps",
+    "min": 0,
+    "max": 0
+  },
+  "alternate_config_directories": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "bounce_service_name": {
+    "type": "STR",
+    "default": "bounce",
+    "min": 1,
+    "max": 0
+  },
+  "cleanup_service_name": {
+    "type": "STR",
+    "default": "cleanup",
+    "min": 1,
+    "max": 0
+  },
+  "defer_service_name": {
+    "type": "STR",
+    "default": "defer",
+    "min": 1,
+    "max": 0
+  },
+  "pickup_service_name": {
+    "type": "STR",
+    "default": "pickup",
+    "min": 1,
+    "max": 0
+  },
+  "queue_service_name": {
+    "type": "STR",
+    "default": "qmgr",
+    "min": 1,
+    "max": 0
+  },
+  "rewrite_service_name": {
+    "type": "STR",
+    "default": "rewrite",
+    "min": 1,
+    "max": 0
+  },
+  "showq_service_name": {
+    "type": "STR",
+    "default": "showq",
+    "min": 1,
+    "max": 0
+  },
+  "error_service_name": {
+    "type": "STR",
+    "default": "error",
+    "min": 1,
+    "max": 0
+  },
+  "flush_service_name": {
+    "type": "STR",
+    "default": "flush",
+    "min": 1,
+    "max": 0
+  },
+  "address_verify_service_name": {
+    "type": "STR",
+    "default": "verify",
+    "min": 1,
+    "max": 0
+  },
+  "trace_service_name": {
+    "type": "STR",
+    "default": "trace",
+    "min": 1,
+    "max": 0
+  },
+  "tls_random_exchange_name": {
+    "type": "STR",
+    "default": "${config_directory}/prng_exch",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_tls_cert_file": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_tls_key_file": {
+    "type": "STR",
+    "default": "$smtpd_tls_cert_file",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_tls_dcert_file": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_tls_dkey_file": {
+    "type": "STR",
+    "default": "$smtpd_tls_dcert_file",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_tls_CAfile": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_tls_CApath": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_tls_cipherlist": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_tls_dh512_param_file": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_tls_dh1024_param_file": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtpd_tls_session_cache_database": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_tls_cert_file": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_tls_key_file": {
+    "type": "STR",
+    "default": "$smtp_tls_cert_file",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_tls_dcert_file": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_tls_dkey_file": {
+    "type": "STR",
+    "default": "$smtp_tls_dcert_file",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_tls_CAfile": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_tls_CApath": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_tls_cipherlist": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_tls_session_cache_database": {
+    "type": "STR",
+    "default": "",
+    "min": 0,
+    "max": 0
+  },
+  "max_use": {
+    "type": "INT",
+    "default": "100",
+    "min": 1,
+    "max": 0
+  },
+  "dont_remove": {
+    "type": "INT",
+    "default": "0",
+    "min": 0,
+    "max": 0
+  },
+  "line_length_limit": {
+    "type": "INT",
+    "default": "2048",
+    "min": 512,
+    "max": 0
+  },
+  "message_size_limit": {
+    "type": "INT",
+    "default": "10240000",
+    "min": 0,
+    "max": 0
+  },
+  "hash_queue_depth": {
+    "type": "INT",
+    "default": "1",
+    "min": 1,
+    "max": 0
+  },
+  "fork_attempts": {
+    "type": "INT",
+    "default": "5",
+    "min": 1,
+    "max": 0
+  },
+  "deliver_lock_attempts": {
+    "type": "INT",
+    "default": "20",
+    "min": 1,
+    "max": 0
+  },
+  "debug_peer_level": {
+    "type": "INT",
+    "default": "2",
+    "min": 1,
+    "max": 0
+  },
+  "fault_injection_code": {
+    "type": "INT",
+    "default": "0",
+    "min": 0,
+    "max": 0
+  },
+  "berkeley_db_create_buffer_size": {
+    "type": "INT",
+    "default": "(16*1024*1024)",
+    "min": 1,
+    "max": 0
+  },
+  "berkeley_db_read_buffer_size": {
+    "type": "INT",
+    "default": "(128*1024)",
+    "min": 1,
+    "max": 0
+  },
+  "header_size_limit": {
+    "type": "INT",
+    "default": "102400",
+    "min": 1,
+    "max": 0
+  },
+  "header_address_token_limit": {
+    "type": "INT",
+    "default": "10240",
+    "min": 1,
+    "max": 0
+  },
+  "mime_nesting_limit": {
+    "type": "INT",
+    "default": "100",
+    "min": 1,
+    "max": 0
+  },
+  "mime_boundary_length_limit": {
+    "type": "INT",
+    "default": "2048",
+    "min": 1,
+    "max": 0
+  },
+  "smtpd_tls_loglevel": {
+    "type": "INT",
+    "default": "0",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_tls_loglevel": {
+    "type": "INT",
+    "default": "0",
+    "min": 0,
+    "max": 0
+  },
+  "tls_daemon_random_bytes": {
+    "type": "INT",
+    "default": "32",
+    "min": 1,
+    "max": 0
+  },
+  "application_event_drain_time": {
+    "type": "TIME",
+    "default": "100s",
+    "min": 1,
+    "max": 0
+  },
+  "max_idle": {
+    "type": "TIME",
+    "default": "100s",
+    "min": 1,
+    "max": 0
+  },
+  "ipc_timeout": {
+    "type": "TIME",
+    "default": "3600s",
+    "min": 1,
+    "max": 0
+  },
+  "ipc_idle": {
+    "type": "TIME",
+    "default": "100s",
+    "min": 1,
+    "max": 0
+  },
+  "ipc_ttl": {
+    "type": "TIME",
+    "default": "1000s",
+    "min": 1,
+    "max": 0
+  },
+  "trigger_timeout": {
+    "type": "TIME",
+    "default": "10s",
+    "min": 1,
+    "max": 0
+  },
+  "fork_delay": {
+    "type": "TIME",
+    "default": "1s",
+    "min": 1,
+    "max": 0
+  },
+  "deliver_lock_delay": {
+    "type": "TIME",
+    "default": "1s",
+    "min": 1,
+    "max": 0
+  },
+  "stale_lock_time": {
+    "type": "TIME",
+    "default": "500s",
+    "min": 1,
+    "max": 0
+  },
+  "smtpd_tls_session_cache_timeout": {
+    "type": "TIME",
+    "default": "3600s",
+    "min": 0,
+    "max": 0
+  },
+  "smtp_tls_session_cache_timeout": {
+    "type": "TIME",
+    "default": "3600s",
+    "min": 0,
+    "max": 0
+  },
+  "daemon_timeout": {
+    "type": "TIME",
+    "default": "18000s",
+    "min": 1,
+    "max": 0
+  },
+  "in_flow_delay": {
+    "type": "TIME",
+    "default": [
+      "0s",
+      "1s"
+    ],
+    "min": 0,
+    "max": 10
+  },
+  "disable_dns_lookups": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "soft_bounce": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "owner_request_special": {
+    "type": "BOOL",
+    "default": "1",
+    "min": null,
+    "max": null
+  },
+  "strict_8bitmime": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "strict_7bit_headers": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "strict_8bitmime_body": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "strict_mime_encoding_domain": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "disable_mime_input_processing": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "disable_mime_output_conversion": {
+    "type": "BOOL",
+    "default": "0",
+    "min": null,
+    "max": null
+  },
+  "address_verify_negative_cache": {
+    "type": "BOOL",
+    "default": "1",
+    "min": null,
+    "max": null
+  },
+  "backwards_bounce_logfile_compatibility": {
+    "type": "BOOL",
+    "default": "1",
+    "min": null,
+    "max": null
+  },
+  "helpful_warnings": {
+    "type": "BOOL",
+    "default": "1",
+    "min": null,
+    "max": null
+  }
+}

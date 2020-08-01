@@ -126,9 +126,9 @@ class Param
   end
 
   def to_json
-    @param.map do |_, p|
+    JSON.pretty_generate( @param.map do |_, p|
       [p.name, {type: p.type, default: p.default, min: p.min, max: p.max}]
-    end.to_h.to_json
+    end.to_h )
   end
 end
 
