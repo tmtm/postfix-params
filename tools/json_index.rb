@@ -4,4 +4,4 @@ require 'json'
 dir = Pathname.new(__dir__)+'../json'
 vers = dir.glob("[1-9]*.json").map {|f| f.basename('.json').to_s}.
          sort_by{|ver| ver.split('.').map(&:to_i) }
-File.write(dir+'versions.json', {versions: vers.reverse}.to_json)
+File.write(dir+'versions.json', JSON.pretty_generate(versions: vers.reverse)+"\n")
