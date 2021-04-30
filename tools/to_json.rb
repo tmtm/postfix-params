@@ -27,6 +27,7 @@ class Param
       "global/mail_addr.h",
       "global/mail_proto.h",
       "global/server_acl.h",
+      "global/mail_conf.h",
       "global/mail_params.h",
       "global/mail_version.h"
     ].each do |f|
