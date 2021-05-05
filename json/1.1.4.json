@@ -60,19 +60,19 @@
   },
   "allow_min_user": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "allow_percent_hack": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
   "allow_untrusted_routing": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -90,13 +90,13 @@
   },
   "append_at_myorigin": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
   "append_dot_mydomain": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -108,7 +108,7 @@
   },
   "biff": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -132,7 +132,7 @@
   },
   "broken_sasl_auth_clients": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -312,19 +312,19 @@
   },
   "disable_dns_lookups": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "disable_verp_bounces": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "disable_vrfy_command": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -360,7 +360,7 @@
   },
   "expand_owner_alias": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -474,7 +474,7 @@
   },
   "ignore_mx_lookup_error": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -531,7 +531,7 @@
   },
   "lmtp_cache_connection": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -591,7 +591,7 @@
   },
   "lmtp_sasl_auth_enable": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -609,7 +609,7 @@
   },
   "lmtp_skip_quit_response": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -870,7 +870,7 @@
   },
   "owner_request_special": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -1026,7 +1026,7 @@
   },
   "require_home_directory": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -1067,8 +1067,8 @@
   "smtp_always_send_ehlo": {
     "type": "BOOL",
     "default": [
-      "0",
-      "1"
+      "no",
+      "yes"
     ],
     "min": null,
     "max": null
@@ -1081,7 +1081,7 @@
   },
   "smtp_break_lines": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -1123,7 +1123,7 @@
   },
   "smtp_never_send_ehlo": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -1147,7 +1147,7 @@
   },
   "smtp_randomize_addresses": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -1159,7 +1159,7 @@
   },
   "smtp_sasl_auth_enable": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -1177,19 +1177,19 @@
   },
   "smtp_skip_4xx_greeting": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
   "smtp_skip_5xx_greeting": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
   "smtp_skip_quit_response": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -1207,7 +1207,7 @@
   },
   "smtpd_delay_reject": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -1231,7 +1231,7 @@
   },
   "smtpd_helo_required": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -1285,7 +1285,7 @@
   },
   "smtpd_sasl_auth_enable": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -1327,7 +1327,7 @@
   },
   "soft_bounce": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -1339,19 +1339,19 @@
   },
   "strict_rfc821_envelopes": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "sun_mailtool_compatibility": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "swap_bangpath": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },

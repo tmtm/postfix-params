@@ -43,7 +43,7 @@
   },
   "address_verify_negative_cache": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -198,19 +198,19 @@
   },
   "allow_min_user": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "allow_percent_hack": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
   "allow_untrusted_routing": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -222,7 +222,7 @@
   },
   "always_add_missing_headers": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -246,7 +246,7 @@
   },
   "append_at_myorigin": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -282,7 +282,7 @@
   },
   "backwards_bounce_logfile_compatibility": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -306,7 +306,7 @@
   },
   "biff": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -354,7 +354,7 @@
   },
   "broken_sasl_auth_clients": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -417,7 +417,7 @@
   },
   "confirm_delay_cleared": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -468,7 +468,7 @@
   },
   "daemon_table_open_error_is_fatal": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -693,49 +693,49 @@
   },
   "destination_concurrency_feedback_debug": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "detect_8bit_encoding_header": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
   "disable_dns_lookups": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "disable_mime_input_processing": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "disable_mime_output_conversion": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "disable_verp_bounces": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "disable_vrfy_command": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "dns_ncache_ttl_fix_enable": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -795,13 +795,13 @@
   },
   "enable_long_queue_ids": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "enable_original_recipient": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -825,7 +825,7 @@
   },
   "expand_owner_alias": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -903,7 +903,7 @@
   },
   "frozen_delivered_to": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -939,7 +939,7 @@
   },
   "helpful_warnings": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -963,7 +963,7 @@
   },
   "ignore_mx_lookup_error": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -1062,7 +1062,7 @@
   },
   "lmtp_assume_final": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -1086,7 +1086,7 @@
   },
   "lmtp_cname_overrides_servername": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -1104,7 +1104,7 @@
   },
   "lmtp_connection_cache_on_demand": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -1146,7 +1146,7 @@
   },
   "lmtp_defer_if_no_mx_address_found": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -1188,7 +1188,7 @@
   },
   "lmtp_enforce_tls": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -1266,7 +1266,7 @@
   },
   "lmtp_per_record_deadline": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -1302,13 +1302,13 @@
   },
   "lmtp_quote_rfc821_envelope": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
   "lmtp_randomize_addresses": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -1344,13 +1344,13 @@
   },
   "lmtp_sasl_auth_enable": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "lmtp_sasl_auth_soft_bounce": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -1398,31 +1398,31 @@
   },
   "lmtp_send_dummy_mail_auth": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "lmtp_send_xforward_command": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "lmtp_sender_dependent_authentication": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "lmtp_skip_5xx_greeting": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
   "lmtp_skip_quit_response": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -1452,7 +1452,7 @@
   },
   "lmtp_tls_block_early_mail_reply": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -1494,7 +1494,7 @@
   },
   "lmtp_tls_enforce_peername": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -1518,7 +1518,7 @@
   },
   "lmtp_tls_force_insecure_host_tlsa_lookup": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -1554,7 +1554,7 @@
   },
   "lmtp_tls_note_starttls_offer": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -1620,13 +1620,13 @@
   },
   "lmtp_tls_wrappermode": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "lmtp_use_tls": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -2007,7 +2007,7 @@
   },
   "multi_instance_enable": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -2113,7 +2113,7 @@
   },
   "owner_request_special": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -2179,7 +2179,7 @@
   },
   "postscreen_bare_newline_enable": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -2359,7 +2359,7 @@
   },
   "postscreen_non_smtp_command_enable": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -2377,7 +2377,7 @@
   },
   "postscreen_pipelining_enable": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -2551,7 +2551,7 @@
   },
   "qmqpd_client_port_logging": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -2704,31 +2704,31 @@
   },
   "require_home_directory": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "reset_owner_alias": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "resolve_dequoted_address": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
   "resolve_null_domain": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "resolve_numeric_domain": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -2749,7 +2749,7 @@
   },
   "send_cyrus_sasl_authzid": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -2819,7 +2819,7 @@
   },
   "show_user_unknown_table_name": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -2847,8 +2847,8 @@
   "smtp_always_send_ehlo": {
     "type": "BOOL",
     "default": [
-      "0",
-      "1"
+      "no",
+      "yes"
     ],
     "min": null,
     "max": null
@@ -2873,7 +2873,7 @@
   },
   "smtp_cname_overrides_servername": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -2892,8 +2892,8 @@
   "smtp_connection_cache_on_demand": {
     "type": "BOOL",
     "default": [
-      "0",
-      "1"
+      "no",
+      "yes"
     ],
     "min": null,
     "max": null
@@ -2936,7 +2936,7 @@
   },
   "smtp_defer_if_no_mx_address_found": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -2978,7 +2978,7 @@
   },
   "smtp_enforce_tls": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -3056,13 +3056,13 @@
   },
   "smtp_never_send_ehlo": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "smtp_per_record_deadline": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -3098,13 +3098,13 @@
   },
   "smtp_quote_rfc821_envelope": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
   "smtp_randomize_addresses": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -3140,13 +3140,13 @@
   },
   "smtp_sasl_auth_enable": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "smtp_sasl_auth_soft_bounce": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -3194,31 +3194,31 @@
   },
   "smtp_send_dummy_mail_auth": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "smtp_send_xforward_command": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "smtp_sender_dependent_authentication": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "smtp_skip_5xx_greeting": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
   "smtp_skip_quit_response": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -3248,7 +3248,7 @@
   },
   "smtp_tls_block_early_mail_reply": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -3296,7 +3296,7 @@
   },
   "smtp_tls_enforce_peername": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -3320,7 +3320,7 @@
   },
   "smtp_tls_force_insecure_host_tlsa_lookup": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -3356,7 +3356,7 @@
   },
   "smtp_tls_note_starttls_offer": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -3422,13 +3422,13 @@
   },
   "smtp_tls_wrappermode": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "smtp_use_tls": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -3500,7 +3500,7 @@
   },
   "smtpd_client_port_logging": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -3530,13 +3530,13 @@
   },
   "smtpd_delay_open_until_valid_rcpt": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
   "smtpd_delay_reject": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -3566,7 +3566,7 @@
   },
   "smtpd_enforce_tls": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -3602,7 +3602,7 @@
   },
   "smtpd_helo_required": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -3656,7 +3656,7 @@
   },
   "smtpd_peername_lookup": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -3764,13 +3764,13 @@
   },
   "smtpd_reject_unlisted_recipient": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
   "smtpd_reject_unlisted_sender": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -3788,13 +3788,13 @@
   },
   "smtpd_sasl_auth_enable": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "smtpd_sasl_authenticated_header": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -3890,19 +3890,19 @@
   },
   "smtpd_tls_always_issue_session_ids": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
   "smtpd_tls_ask_ccert": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "smtpd_tls_auth_only": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -4019,13 +4019,13 @@
   },
   "smtpd_tls_received_header": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "smtpd_tls_req_ccert": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -4049,7 +4049,7 @@
   },
   "smtpd_tls_wrappermode": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -4067,7 +4067,7 @@
   },
   "smtpd_use_tls": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -4085,7 +4085,7 @@
   },
   "soft_bounce": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -4103,55 +4103,55 @@
   },
   "strict_7bit_headers": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "strict_8bitmime": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "strict_8bitmime_body": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "strict_mailbox_ownership": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
   "strict_mime_encoding_domain": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "strict_rfc821_envelopes": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "strict_smtputf8": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "sun_mailtool_compatibility": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
   "swap_bangpath": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -4178,7 +4178,7 @@
   },
   "tls_append_default_CA": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -4202,7 +4202,7 @@
   },
   "tls_dane_trust_anchor_digest_enable": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -4278,7 +4278,7 @@
   },
   "tls_fast_shutdown_enable": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },
@@ -4293,7 +4293,7 @@
   },
   "tls_legacy_public_key_fingerprints": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -4323,7 +4323,7 @@
   },
   "tls_preempt_cipherlist": {
     "type": "BOOL",
-    "default": "0",
+    "default": "no",
     "min": null,
     "max": null
   },
@@ -4375,7 +4375,7 @@
   },
   "tls_wildcard_matches_multiple_labels": {
     "type": "BOOL",
-    "default": "1",
+    "default": "yes",
     "min": null,
     "max": null
   },

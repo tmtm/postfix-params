@@ -120,7 +120,11 @@ class Param
           break if a == ['0']
           name, default, _, min, max = a
           next unless @var[name]
-          @param[@var[name]] = Parameter.new(@var[name], type, @def[default], min&.to_i, max&.to_i)
+          d = @def[default]
+          if type == 'BOOL'
+            d = d == '0' ? 'no' : d == '1' ? 'yes' : d.map{ _1 == '0' ? 'no' : 'yes' }
+          end
+          @param[@var[name]] = Parameter.new(@var[name], type, d, min&.to_i, max&.to_i)
         end
       end
     end
